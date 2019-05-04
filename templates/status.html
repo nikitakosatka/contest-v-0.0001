@@ -1,4 +1,15 @@
 {% extends "base.html" %}
 {% block body %}
-<a></a>
+<h1>Статусы полылок</h1>
+{% for solution in solutions %}
+    <h2>{{ solution.task }}</h2>
+    <pre>{{ solution.code }}</pre>
+    {% if solution.status == 'Зачтено' %}
+        <button type="button" class="btn btn-success">Зачтено</button>
+    {% elif solution.status == 'На доработке' %}
+        <button type="button" class="btn btn-danger">На доработке</button>
+    {% elif solution.status == 'На проверке' %}
+        <button type="button" class="btn btn-secondary">На проверке</button>
+    {% endif %}
+{% endfor %}
 {% endblock %}

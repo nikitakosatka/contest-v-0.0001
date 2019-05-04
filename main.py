@@ -147,7 +147,8 @@ def index():
 
 @app.route('/status')
 def status():
-    return render_template("status.html")
+    solutions = SolutionAttempt.query.filter_by().all()
+    return render_template("status.html", solutions=solutions)
 
 
 if __name__ == '__main__':
