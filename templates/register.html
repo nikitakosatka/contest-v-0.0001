@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block body %}
+    <h1>Регистрация ученика Яндекс.Лицея</h1>
+    <form method="post">
+        <input class="form-control" required id="name" placeholder="Имя" name="name">
+        <input class="form-control" required id="surname" placeholder="Фамилия" name="surname">
+        <input class="form-control" required id="login" placeholder="Логин" name="login">
+        <input class="form-control" required type="email" id="email" placeholder="Электронная почта" name="email">
+        <input class="form-control" required id="group" placeholder="Группа" name="group">
+        <input type="password" required class="form-control" id="password" placeholder="Пароль" name="password">
+        <a type="button" href="/login" class="btn btn-link">Войти</a><br>
+        <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+    </form>
+{% endblock %}
