@@ -5,17 +5,19 @@
   <form class="form-inline">
       <button class="btn btn-outline-secondary" onclick="window.location='/index'" type="button">Отправить посылку</button>
       <button class="btn btn-outline-secondary" onclick="window.location='/status'" type="button">Статусы посылок</button>
+      <button type="button" onclick="window.location='/login'" class="btn btn-outline-dark">Выход</button>
   </form>
 </nav>
 <h1>Отправить посылку</h1>
     <form method="post">
         <input class="form-control" required id="task" placeholder="Название" name="task">
         <div>
-            <textarea rows="10" required cols="100" name="code" id="code"></textarea>
+            <textarea rows="10" required cols="100" name="code" id="code" placeholder="Код"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Отправить</button>
     </form>
 {% else %}
+<button type="button" onclick="window.location='/login'" class="btn btn-outline-dark">Выход</button>
 <h1>Посылки</h1>
 {% for solution in solutions %}
     <form method="post">

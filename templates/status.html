@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 {% block body %}
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+      <button class="btn btn-outline-secondary" onclick="window.location='/index'" type="button">Отправить посылку</button>
+      <button class="btn btn-outline-secondary" onclick="window.location='/status'" type="button">Статусы посылок</button>
+      <button type="button" onclick="window.location='/login'" class="btn btn-outline-dark">Выход</button>
+  </form>
+</nav>
 <h1>Статусы полылок</h1>
 {% for solution in solutions %}
     <h2>{{ solution.task }}</h2>
