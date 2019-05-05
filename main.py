@@ -105,6 +105,11 @@ def index():
 
     elif request.method == 'POST':
         if session.get('username') != 'admin':
+            db.session.add(SolutionAttempt(task=request.form['task'],
+                                           code=request.form['code'],
+                                           status='На проверке',
+                                           student_id=session['user_id']))
+            db.session.commit()
             return render_template("index.html")
         else:
             if request.form.get("edit-solution") == "1":
